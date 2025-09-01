@@ -26,14 +26,14 @@ k delete pods nginx my-nginx
 pod "nginx" deleted
 pod "my-nginx" deleted
 ```
-6. 
+6. [manifest file](6.pod.yaml)
 ```bash
 k create -f 6.pod.yaml 
 
 pod/nginx created
 ```
 
-7. 
+7. [manifest file](7.rs.yaml)
 ```bash
 k create -f 7.rs.yaml 
 
@@ -70,7 +70,7 @@ spec:
         image: nginx
 ```
 12. find out the issue in the below Yaml (don't use AI) <br>
-    > **answer**:  the kind should be `Deployment` not `deployment`
+    > **answer**:  the kind should be `Deployment` not `deployment`, [manifest file](12.deploy.yaml)
 ```yaml
 apiVersion: apps/v1
 kind: deployment
@@ -159,7 +159,7 @@ docker run -itd -p 80:80 baselabouelnour/nginx:custom
 
 docker push baselabouelnour/nginx:custom
 ```
-19. Create a Deployment Using This Image:
+19. Create a Deployment Using This Image [manifest file](19.deploy.yaml):
 ```bash
 kubectl create deployment custom-nginx --image=baselabouelnour/nginx:custom --replicas=3 
 
